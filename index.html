@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baby Bobby</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section>
+        <div class="bg"></div>
+        <header>
+            <a href="" class="logo">Baby Bobby</a>
+            <div class="toggle"></div>
+            <ul class="navigation">
+                <li><a target="_blank" href="https://pancakeswap.finance/swap">Pancake</a></li>
+                <li><a target="_blank" href="https://poocoin.app/">Poocoin</a></li>
+                <li><a target="_blank" href="https://tokensniffer.com/token/">Tokensniffer</a></li>
+                <li><a target="_blank" href="https://memetools.app/">MemeTools</a></li>
+            </ul>
+        </header>
+        <div class="content">
+            <div class="textBox apple">
+                <h2>Baby Bobby</h2>
+                <p>Newest and hottest coin on BSC network, hit me baby bobby one more time!</p>
+                <a href="https://poocoin.app/" target="_blank">Buy Baby Bobby</a>
+            </div>
+            <div class="textBox mango">
+                <h2>Token information</h2>
+                <p>Baby bobby has a total supply of 100,000,000,000, Token decimals are 18, and ticker is $BB<br />Max
+                    transaction is 1%, while max wallet is 2%.</p>
+                <a href="https://poocoin.app/" target="_blank">Buy Baby Bobby </a>
+            </div>
+            <div class="textBox watermelon">
+                <h2>Tokenomics</h2>
+                <p>Baby Bobby Buy fee is 9% (5% liquidity, 3% marketing and 1% team)<br />
+                    Baby Bobby sell fee is 11% (5% liquidity, 5% marketing and 1% team)
+                </p>
+                <a href="https://poocoin.app/" target="_blank">Buy Baby Bobby</a>
+            </div>
+            <div class="imgBx">
+                <img src="./babybobby.png" class="fruits" alt="" />
+            </div>
+        </div>
+        <ul class="thumb">
+            <li data-text="Baby Bobby" class="active"><img src="babybobby.png"
+                    onclick="imgSlider('babybobby.png'); changeBgColor('#92ba3c'); changeText('apple')" /></li>
+            <li data-text="Coin"><img src="bby.png"
+                    onclick="imgSlider('bby.png'); changeBgColor('#ffcc02'); changeText('mango')" /></li>
+            <li data-text="Tokenomics"><img src="bbp.png"
+                    onclick="imgSlider('bbp.png'); changeBgColor('#fb6cb2'); changeText('watermelon')" />
+            </li>
+        </ul>
+        <ul class="sci" style="z-index: 10000;">
+            <li><a href="https://twitter.com/babybobbybsc" target="_blank"><img src="twitter.png"/></a></li>
+            <li><a href="https://t.me/babybobbybsc" target="_blank"><img src="tele.png" /></a></li>
+        </ul>
+    </section>
+
+    <script>
+        let el = document.querySelectorAll('.thumb li');
+        for (let i = 0; i < el.length; i++) {
+            el[i].onclick = function () {
+                var c = 0;
+                while (c < el.length) {
+                    el[c++].className = 'check';
+                }
+                el[i].className = 'check active';
+            }
+        }
+
+        let textHead = document.querySelectorAll('.textBox');
+        for (let i = 0; i < textHead.length; i++) {
+            el[i].onclick = function () {
+                var c = 0;
+                while (c < el.length) {
+                    el[c++].className = 'check';
+                }
+                el[i].className = 'check active';
+            }
+        }
+
+        function imgSlider(anything) {
+            document.querySelector('.fruits').src = anything;
+        }
+
+        function changeText(text) {
+            var elements = document.querySelectorAll('.textBox');
+            for (let i = 0; i < elements.length; i++) {
+                if (elements[i].classList.contains(text)) {
+                    elements[i].style.display = 'block';
+                } else {
+                    elements[i].style.display = 'none';
+                }
+            }
+        }
+
+        function changeBgColor(color) {
+            const bg = document.querySelector('.bg');
+            bg.style.background = color;
+        }
+
+        let menuToggle = document.querySelector('.toggle');
+        let navigationToggle = document.querySelector('.navigation');
+        menuToggle.onclick = function () {
+            menuToggle.classList.toggle('active');
+            navigationToggle.classList.toggle('active');
+        }
+    </script>
+</body>
+
+</html>
